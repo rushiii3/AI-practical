@@ -44,3 +44,21 @@ cousin(X, Y) :- parent(Z, X), parent(W, Y), (brother(Z, W); sister(Z, W)).
 
 % Family Tree
 % You can visualize the family tree based on the facts and relationships defined above.
+
+//output
+?- father(john, X).
+X = james.
+
+?- grandmother(X, emily).
+X = mary ;
+X = susan.
+
+?- niece(X, anna).
+?- nephew(X, anna).
+X = sarah ;
+X = george ;
+X = david.
+
+
+?- cousin(X, david).
+X = george.
