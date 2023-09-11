@@ -1,4 +1,3 @@
-% Predicates
 male(john).
 male(james).
 male(peter).
@@ -14,7 +13,7 @@ female(emily).
 female(sarah).
 female(anna).
 
-% Facts (parent/2)
+
 parent(john, james).
 parent(john, susan).
 parent(james, linda).
@@ -29,7 +28,6 @@ parent(joseph, anna).
 parent(anna, george).
 parent(anna, david).
 
-% Rules for family relationships
 father(X, Y) :- male(X), parent(X, Y).
 mother(X, Y) :- female(X), parent(X, Y).
 grandfather(X, Y) :- father(X, Z), parent(Z, Y).
@@ -42,8 +40,6 @@ nephew(X, Y) :- male(X), parent(Z, X), (uncle(Z, Y); aunt(Z, Y)).
 niece(X, Y) :- female(X), parent(Z, X), (uncle(Z, Y); aunt(Z, Y)).
 cousin(X, Y) :- parent(Z, X), parent(W, Y), (brother(Z, W); sister(Z, W)).
 
-% Family Tree
-% You can visualize the family tree based on the facts and relationships defined above.
 
 //output
 ?- father(john, X).
